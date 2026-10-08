@@ -369,6 +369,47 @@
   /* ---------------------------------------------------------------------
      Footer year
      ------------------------------------------------------------------ */
+  // Keep the SW 21 product entry pointing to its current detail-page slug
+  // across the shared desktop and mobile navigation markup.
+  each(document.querySelectorAll('a[href="#ventilators"], a[href="sw-21.html"], a[href="#"], a[href="index.html#humming-bee"], a[href="#humming-bee"], a[href="bubble-cpap-machine.html"], a[href="index.html#thermal-care"], a[href="#thermal-care"], a[href="index.html#phototherapy"], a[href="#phototherapy"]'), function (link) {
+    if (/Neonatal Ventilator SW 21/i.test(link.textContent)) {
+      link.setAttribute('href', 'shreeyash-sw21-15-inches.html');
+    }
+    if (/Adult Ventilator\s*Shreeyash 900/i.test(link.textContent)) {
+      link.setAttribute('href', 'shreeyash-900-dv.html');
+    }
+    if (/High Frequency\s*Oscillator\s*-?\s*Dragonfly/i.test(link.textContent)) {
+      link.setAttribute('href', 'dragonfly.html');
+    }
+    if (/^Bubble CPAP$/i.test(link.textContent.trim())) {
+      link.setAttribute('href', 'bubble-cpap-machine.html');
+    }
+    if (/^Humming Bee$/i.test(link.textContent.trim())) {
+      link.setAttribute('href', 'humming-bee.html');
+    }
+    if (/^Bubble CPAP Machine$/i.test(link.textContent.trim())) {
+      link.setAttribute('href', 'humming-bee.html');
+    }
+    if (/^First Care$/i.test(link.textContent.trim())) {
+      link.setAttribute('href', 'first-care.html');
+    }
+    if (/^Jeevak\s+Basic\s+II$/i.test(link.textContent.trim())) {
+      link.setAttribute('href', 'jeevak-basic.html');
+    }
+    if (/^Care Plus$/i.test(link.textContent.trim())) {
+      link.setAttribute('href', 'care-plus.html');
+    }
+    if (/^Float\s+Warmer$/i.test(link.textContent.trim())) {
+      link.setAttribute('href', 'float-warmer.html');
+    }
+    if (/^(Bilibed LED Phototherapy|Double Surface Phototherapy)$/i.test(link.textContent.trim())) {
+      link.setAttribute('href', 'double-surface-phototherapy.html');
+    }
+    if (/^Bilicare\s+Focus/i.test(link.textContent.trim())) {
+      link.setAttribute('href', 'bilicarefocus.html');
+    }
+  });
+
   var yearEl = document.querySelector('[data-year]');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
